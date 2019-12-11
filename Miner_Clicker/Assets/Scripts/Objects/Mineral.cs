@@ -17,11 +17,11 @@ public class Mineral
     int chanceOfSmelting;
 
     //Visual
-    string imageMineralMena;
+    string imageMineralOre;
     string imageMineral;
 
     public Mineral(int id_, string name_, int hardness_, int probabilityAppear_, int timeToFoundation_, 
-                    int chanceOfSmelting_, string imageMineralMena_, string imageMineral_)
+                    int chanceOfSmelting_, string imageMineralOre_, string imageMineral_)
     {
         id = id_;
         name = name_;
@@ -29,7 +29,7 @@ public class Mineral
         probabilityAppear = probabilityAppear_;
         timeToFoundation = timeToFoundation_;
         chanceOfSmelting = chanceOfSmelting_;
-        imageMineralMena = imageMineralMena_;
+        imageMineralOre = imageMineralOre_;
         imageMineral = imageMineral_;
     }
 
@@ -41,5 +41,16 @@ public class Mineral
     {
         return name;
     }
-
+    public int getProbabilityAppear()
+    {
+        return probabilityAppear;
+    }
+    public int getTimeToFoundation()
+    {
+        return timeToFoundation;
+    }
+    public int getChanceOfSmelting()
+    {
+        return chanceOfSmelting;
+    }
 }
