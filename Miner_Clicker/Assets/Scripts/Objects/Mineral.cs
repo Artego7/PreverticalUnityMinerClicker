@@ -2,29 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mineral
+[CreateAssetMenu(fileName = "Mineral", menuName = "Mineral/Create", order = 1)]
+public class Mineral : ScriptableObject
 {
     //General
-    int id;
-    string name;
-    int hardness;
+    public int id;
+    public string mineral;
+    public int hardness;
 
     //Mining
-    int probabilityAppear;
+    public int probabilityAppear;
     
     //Fundation
-    int timeToFoundation;
-    int chanceOfSmelting;
+    public int timeToFoundation;
+    public int chanceOfSmelting;
 
     //Visual
-    string imageMineralOre;
-    string imageMineral;
+    public string imageMineral;
+    public string imageMineralOre;
 
-    public Mineral(int id_, string name_, int hardness_, int probabilityAppear_, int timeToFoundation_, 
+    public Mineral(int id_, string mineral_, int hardness_, int probabilityAppear_, int timeToFoundation_, 
                     int chanceOfSmelting_, string imageMineralOre_, string imageMineral_)
     {
         id = id_;
-        name = name_;
+        mineral = mineral_;
         hardness = hardness_;
         probabilityAppear = probabilityAppear_;
         timeToFoundation = timeToFoundation_;
@@ -39,7 +40,7 @@ public class Mineral
     }
     public string getNameMineral()
     {
-        return name;
+        return mineral;
     }
     public int getProbabilityAppear()
     {

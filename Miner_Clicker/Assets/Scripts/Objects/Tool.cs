@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tool
+[CreateAssetMenu(fileName = "Tool", menuName = "Tool/Create", order = 1)]
+public class Tool : ScriptableObject
 {
-    int id;
-    string name;
-    int hardness;
-    int durability;
-    int hability;
+    public int id;
+    public string tool;
+    public int hardness;
+    public int durability;
+    public int hability;
 
-    public Tool(int id_, string name_, int hardness_, int durability_, int hability_)
+    string imageTool;
+
+    public Tool(int id_, string tool_, int hardness_, int durability_, int hability_, string imageTool_)
     {
         id = id_;
-        name = name_;
+        tool = tool_;
         hardness = hardness_;
         durability = durability_;
         hability = hability_;
+        imageTool = imageTool_;
     }
     public int getIdTool()
     {
@@ -24,7 +28,7 @@ public class Tool
     }
     public string getNameTool()
     {
-        return name;
+        return tool;
     }
 
 }
