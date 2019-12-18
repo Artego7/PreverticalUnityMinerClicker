@@ -60,11 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\MineralAction.cs" />
+    <Compile Include="Assets\Scripts\MineralControler.cs" />
     <Compile Include="Assets\Scripts\Objects\Mineral.cs" />
     <Compile Include="Assets\Scripts\Objects\Player.cs" />
     <Compile Include="Assets\Scripts\Objects\Tool.cs" />
+    <Compile Include="Assets\Scripts\Objects\World.cs" />
+    <Compile Include="Assets\Scripts\WorldControler.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/abel.zambrano/Desktop/Abel Zambrano/Unity/PreverticalUnityMinerClicker/Miner_Clicker/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

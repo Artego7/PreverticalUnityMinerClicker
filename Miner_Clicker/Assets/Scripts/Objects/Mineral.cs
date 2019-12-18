@@ -12,17 +12,17 @@ public class Mineral : ScriptableObject
 
     //Mining
     public int probabilityAppear;
-    
+
     //Fundation
     public int timeToFoundation;
     public int chanceOfSmelting;
 
     //Visual
-    public string imageMineral;
-    public string imageMineralOre;
+    public Sprite imageMineral;
+    public Sprite imageMineralOre;
 
-    public Mineral(int id_, string mineral_, int hardness_, int probabilityAppear_, int timeToFoundation_, 
-                    int chanceOfSmelting_, string imageMineralOre_, string imageMineral_)
+    public Mineral(int id_, string mineral_, int hardness_, int probabilityAppear_, int timeToFoundation_,
+                    int chanceOfSmelting_, Sprite imageMineralOre_, Sprite imageMineral_)
     {
         id = id_;
         mineral = mineral_;
@@ -33,7 +33,7 @@ public class Mineral : ScriptableObject
         imageMineralOre = imageMineralOre_;
         imageMineral = imageMineral_;
     }
-
+    
     public int getIdMineral()
     {
         return id;
@@ -54,4 +54,12 @@ public class Mineral : ScriptableObject
     {
         return chanceOfSmelting;
     }
+
+    public void Print()
+    {
+        Debug.Log("id: " + id + ", name: " + name +", hardness: " + hardness +
+            ", Probability Appear: " + probabilityAppear + ", Time to Foundation" + timeToFoundation +
+            ", Chance of Smelting: " + chanceOfSmelting);
+    }
+
 }
