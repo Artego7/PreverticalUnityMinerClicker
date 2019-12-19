@@ -12,12 +12,16 @@ public class MineralControler : MonoBehaviour
     void Start()
     {
 
-        //Instantiate(prefabMineral);
+        Instantiate(prefabMineral);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void instanceMineral()
+    {
+        Instantiate(prefabMineral);
     }
 }

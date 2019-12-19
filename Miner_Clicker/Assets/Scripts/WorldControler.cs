@@ -6,28 +6,43 @@ using UnityEngine;
 public class WorldControler : MonoBehaviour
 {
     public static WorldControler instance;
+
     [SerializeField]
     public World world;
 
-    List<World> worlds;
+    List<World> worlds = new List<World>();
+
+    string[] worldNames =
+    {
+        "Earth",
+        "Marth",
+        "Jupiter"
+    };
+
 
     private void Awake()
     {
-        //worlds.Add();
+        //Debug.Log(worldNames[0]);
+        instance = this;
+        //world.Print();
+        for (int i = 0; i < worldNames.Length; i++)
+        {
+            world = (World)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Worlds/" + worldNames[i] + ".asset", typeof(World));
+            //world.Print();
+            worlds.Add(world);
+            //worlds[i].Print();
+        }
+        //Object[] wa = Resources.LoadAll("ScriptableObj/Worlds",typeof(World));
+        world = worlds[0];
+
+        //World w = (World)wa[0];
+        //w.Print();
+        //wa.Print();
     }
     // Start is called before the first frame update
     void Start()
     {
-
-        instance = this;
-        //world.Print();
-        World weeorld = (World)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Worlds/Marth.asset",typeof(World));
-        weeorld.Print();
-        Object[] wesdfdsdf = Resources.LoadAll("ScriptableObj/Worlds",typeof(World));
-
-        World w = (World)wesdfdsdf[0];
-        w.Print();
-        //wesdfdsdf.Print();
+        
     }
 
     // Update is called once per frame
@@ -35,4 +50,19 @@ public class WorldControler : MonoBehaviour
     {
         
     }
+    public void GoEarth()
+    {
+        world = worlds[0];
+    }
+
+    public void GoMarth()
+    {
+        world = worlds[1];
+    }
+
+    public void GoJupirt()
+    {
+        world = worlds[2];
+    }
+
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MineralAction : MonoBehaviour
 {
-    [SerializeField]
     Mineral mineral;
     Renderer cubeRenderer;
+    MineralControler mControler;
     int actualHardness;
     World world;
 
@@ -17,9 +17,12 @@ public class MineralAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        actualHardness = mineral.hardness;
         cubeRenderer = this.gameObject.GetComponent<Renderer>();
-        
+        mControler = gameObject.GetComponent<MineralControler>();
+        world.Print();
+        mineral = world.minerals[0];
+        actualHardness = mineral.hardness;
+        Debug.Log(mineral.hardness);
     }
 
     // Update is called once per frame
@@ -30,13 +33,18 @@ public class MineralAction : MonoBehaviour
     private void OnMouseDown()
     {
         actualHardness--;
-        actualHardness = mineral.hardness;
         if (actualHardness <= mineral.hardness / 2)
         cubeRenderer.material.SetColor("_Color", Color.yellow);
         if (actualHardness <= mineral.hardness / 4)
             cubeRenderer.material.SetColor("_Color", Color.red);
         if (actualHardness <= 0)
+        {
             Destroy(gameObject);
+
+            mControler.instanceMineral();
+        }
+
+        Debug.Log(actualHardness);
     }
     void getData()
     {
