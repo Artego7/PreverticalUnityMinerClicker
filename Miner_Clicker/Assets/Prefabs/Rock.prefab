@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7439219618084600417}
   - component: {fileID: 7439219618084600416}
   - component: {fileID: 7439219618084600428}
+  - component: {fileID: 2349659509707961461}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,4 +105,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48abf51ddd612eb4cb963f04e967ef7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mineral: {fileID: 11400000, guid: 119bc0b4d4edd604aa805e59f4a83025, type: 2}
+--- !u!95 &2349659509707961461
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7439219618084600423}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e224398746fc984469d6517fd9174a74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Objects\Player.cs" />
     <Compile Include="Assets\Scripts\Objects\Tool.cs" />
     <Compile Include="Assets\Scripts\Objects\World.cs" />
+    <Compile Include="Assets\Scripts\PickaxeAction.cs" />
     <Compile Include="Assets\Scripts\WorldControler.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/abel.zambrano/Desktop/Abel Zambrano/Unity/PreverticalUnityMinerClicker/Miner_Clicker/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

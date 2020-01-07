@@ -9,6 +9,11 @@ public class MineralAction : MonoBehaviour
     MineralControler mControler;
     int actualHardness;
     World world;
+    Animator animator;
+    PickaxeAction pickaxeAction;
+
+    bool isMining = false;
+
 
     private void Awake()
     {
@@ -19,6 +24,7 @@ public class MineralAction : MonoBehaviour
     {
         cubeRenderer = this.gameObject.GetComponent<Renderer>();
         mControler = gameObject.GetComponent<MineralControler>();
+        animator = this.gameObject.GetComponent<Animator>();
         world.Print();
         mineral = world.minerals[0];
         actualHardness = mineral.hardness;
@@ -28,10 +34,21 @@ public class MineralAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isMining)
+        {
+            isMining = !isMining;
+            animator.SetBool("IsMining", false);
+        }
     }
 
     private void OnMouseDown()
     {
+        pickaxeAction.animPickaxe();
+        if (!isMining) {
+            animator.SetBool("IsMining", true);
+            isMining = !isMining;
+        }
+
         actualHardness--;
         if (actualHardness <= mineral.hardness / 2)
         cubeRenderer.material.SetColor("_Color", Color.yellow);
