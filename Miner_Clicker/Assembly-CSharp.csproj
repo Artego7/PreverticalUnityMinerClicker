@@ -60,14 +60,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ChangePickaxe.cs" />
+    <Compile Include="Assets\Scripts\Controlers\GameControler.cs" />
+    <Compile Include="Assets\Scripts\Controlers\MineralControler.cs" />
+    <Compile Include="Assets\Scripts\DestructionMineralParticle.cs" />
     <Compile Include="Assets\Scripts\MineralAction.cs" />
-    <Compile Include="Assets\Scripts\MineralControler.cs" />
     <Compile Include="Assets\Scripts\Objects\Mineral.cs" />
     <Compile Include="Assets\Scripts\Objects\Player.cs" />
     <Compile Include="Assets\Scripts\Objects\Tool.cs" />
     <Compile Include="Assets\Scripts\Objects\World.cs" />
+    <Compile Include="Assets\Scripts\ParticleFollowMouse.cs" />
     <Compile Include="Assets\Scripts\PickaxeAction.cs" />
-    <Compile Include="Assets\Scripts\WorldControler.cs" />
+    <Compile Include="Assets\Scripts\PlayerAction.cs" />
+    <Compile Include="Assets\Scripts\Sounds\PickaxeSound.cs" />
+    <Compile Include="Assets\Scripts\ToolList.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/abel.zambrano/Desktop/Abel Zambrano/Unity/PreverticalUnityMinerClicker/Miner_Clicker/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

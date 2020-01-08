@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   id: 2
-  mineral: Gold
+  mineralname: Gold
   hardness: 50
   probabilityAppear: 50
   timeToFoundation: 50

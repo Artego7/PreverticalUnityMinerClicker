@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: 
   id: 1
-  mineral: Iron
+  mineralname: Iron
   hardness: 25
   probabilityAppear: 90
   timeToFoundation: 60

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player
+[CreateAssetMenu(fileName = "Player", menuName = "Player/Create", order = 1)]
+public class Player : ScriptableObject
 {
-    string name;
-    Tool[] tools;
-    Mineral[] minerals;
+    public string playerName;
+    public List<Tool> tools;
+    public List<Mineral> minerals;
+    public int pickaxeOnUse;
 
     public Player(string name_)
     {

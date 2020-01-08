@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Diamond
   m_EditorClassIdentifier: 
   id: 3
-  mineral: Diamond
+  mineralname: Diamond
   hardness: 90
   probabilityAppear: 20
   timeToFoundation: 120

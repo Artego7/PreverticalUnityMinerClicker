@@ -16,7 +16,12 @@ public class PickaxeAction : MonoBehaviour
     {
         
     }
-    public void animPickaxe(){
-            animator.SetBool("IsMining",true);
+    public void animPickaxeTrue(){
+            animator.SetBool("IsMining", true);
     }
+    public void animPickaxeFalse()
+    {
+        animator.SetBool("IsMining", true);
+    }
+
 }

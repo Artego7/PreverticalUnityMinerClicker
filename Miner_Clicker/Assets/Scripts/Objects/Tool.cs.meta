@@ -3,7 +3,11 @@ guid: faf60688432c34647b6794dabaf1b435
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - materialPickaxe: {fileID: 2100000, guid: bbb313cf310a79c4bbcf22c2f98031ca, type: 2}
+  - materialPickaxeStick: {fileID: 2100000, guid: 0ac8f58c0d3d17a4cab17ff9e9b0d8ef,
+      type: 2}
+  - spriteIcon: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   id: 0
-  mineral: Rock
+  mineralname: Rock
   hardness: 10
   probabilityAppear: 95
   timeToFoundation: 30

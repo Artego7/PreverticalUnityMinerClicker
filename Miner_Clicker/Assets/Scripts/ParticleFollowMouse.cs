@@ -2,26 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MineralControler : MonoBehaviour
+public class ParticleFollowMouse : MonoBehaviour
 {
-
-    [SerializeField]
-    GameObject prefabMineral;
-    
     // Start is called before the first frame update
     void Start()
     {
-
-        Instantiate(prefabMineral);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-    public void instanceMineral()
-    {
-        Instantiate(prefabMineral);
+        this.transform.position = Input.mousePosition;
     }
 }

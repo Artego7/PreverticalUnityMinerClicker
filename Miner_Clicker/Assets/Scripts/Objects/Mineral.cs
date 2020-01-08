@@ -7,7 +7,7 @@ public class Mineral : ScriptableObject
 {
     //General
     public int id;
-    public string mineral;
+    public string mineralname;
     public int hardness;
 
     //Mining
@@ -25,7 +25,7 @@ public class Mineral : ScriptableObject
                     int chanceOfSmelting_, Sprite imageMineralOre_, Sprite imageMineral_)
     {
         id = id_;
-        mineral = mineral_;
+        mineralname = mineral_;
         hardness = hardness_;
         probabilityAppear = probabilityAppear_;
         timeToFoundation = timeToFoundation_;
@@ -40,7 +40,7 @@ public class Mineral : ScriptableObject
     }
     public string getNameMineral()
     {
-        return mineral;
+        return mineralname;
     }
     public int getProbabilityAppear()
     {

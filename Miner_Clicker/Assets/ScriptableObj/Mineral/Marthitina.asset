@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Marthitina
   m_EditorClassIdentifier: 
   id: 4
-  mineral: Marthitina
+  mineralname: Marthitina
   hardness: 60
   probabilityAppear: 90
   timeToFoundation: 100

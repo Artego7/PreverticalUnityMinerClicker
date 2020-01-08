@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class WorldControler : MonoBehaviour
+public class GameControler : MonoBehaviour
 {
-    public static WorldControler instance;
+    public static GameControler instance;
 
     [SerializeField]
     public World world;
+    [SerializeField]
+    PlayerAction playerAction;
+    [SerializeField]
+    public Player player;
+
+    ChangePickaxe changePickaxe;
 
     List<World> worlds = new List<World>();
 
@@ -22,22 +28,15 @@ public class WorldControler : MonoBehaviour
 
     private void Awake()
     {
-        //Debug.Log(worldNames[0]);
         instance = this;
-        //world.Print();
         for (int i = 0; i < worldNames.Length; i++)
         {
             world = (World)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Worlds/" + worldNames[i] + ".asset", typeof(World));
-            //world.Print();
             worlds.Add(world);
-            //worlds[i].Print();
         }
         //Object[] wa = Resources.LoadAll("ScriptableObj/Worlds",typeof(World));
         world = worlds[0];
-
-        //World w = (World)wa[0];
-        //w.Print();
-        //wa.Print();
+        player = playerAction.player;
     }
     // Start is called before the first frame update
     void Start()
@@ -48,7 +47,11 @@ public class WorldControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (changePickaxe.isChange)
+        {
+            player.pickaxeOnUse = changePickaxe.player.pickaxeOnUse;
+            changePickaxe.isChange = false;
+        }
     }
     public void GoEarth()
     {

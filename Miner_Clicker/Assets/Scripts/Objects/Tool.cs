@@ -11,9 +11,18 @@ public class Tool : ScriptableObject
     public int durability;
     public int hability;
 
-    string imageTool;
+    public Material materialPickaxe;
+    public Material materialPickaxeStick;
+    //TEMPORAL VARIABLE
+    public float RColorPickaxe;
+    public float GColorPickaxe;
+    public float BColorPickaxe;
+    public float AColorPickaxe;
 
-    public Tool(int id_, string tool_, int hardness_, int durability_, int hability_, string imageTool_)
+    public Sprite spriteIcon;
+    Sprite imageTool;
+
+    public Tool(int id_, string tool_, int hardness_, int durability_, int hability_, Sprite imageTool_)
     {
         id = id_;
         tool = tool_;
@@ -29,6 +38,17 @@ public class Tool : ScriptableObject
     public string getNameTool()
     {
         return tool;
+    }
+
+    public void Print()
+    {
+        Debug.Log("id: " + id + ", name: " + tool +
+            ", hardness: " + hardness + ", durability: "
+            + durability + ", R Color: " + RColorPickaxe +
+            ", G Color: " + GColorPickaxe + ", B Color: " +
+            BColorPickaxe + ", A Color: " + AColorPickaxe
+            );
+
     }
 
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Jupiteritus
   m_EditorClassIdentifier: 
   id: 7
-  mineral: Jupiteritus
+  mineralname: Jupiteritus
   hardness: 300
   probabilityAppear: 80
   timeToFoundation: 400
