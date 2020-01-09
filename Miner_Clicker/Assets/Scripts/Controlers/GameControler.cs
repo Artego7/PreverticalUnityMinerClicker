@@ -13,8 +13,8 @@ public class GameControler : MonoBehaviour
     PlayerAction playerAction;
     [SerializeField]
     public Player player;
-
-    ChangePickaxe changePickaxe;
+    [SerializeField]
+    GameObject Pickaxe;
 
     List<World> worlds = new List<World>();
 
@@ -47,11 +47,7 @@ public class GameControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (changePickaxe.isChange)
-        {
-            player.pickaxeOnUse = changePickaxe.player.pickaxeOnUse;
-            changePickaxe.isChange = false;
-        }
+        
     }
     public void GoEarth()
     {
@@ -67,5 +63,17 @@ public class GameControler : MonoBehaviour
     {
         world = worlds[2];
     }
+    public void changePickaxe(int pickaxe)
+    {
+        player.pickaxeOnUse = player.tools[pickaxe].id;
+        Pickaxe.transform.GetChild(1).GetComponent<Renderer>()
+            .material.SetColor("_Color", new Color(player.tools[player.pickaxeOnUse].RColorPickaxe/255,
+                                        player.tools[player.pickaxeOnUse].GColorPickaxe/255,
+                                        player.tools[player.pickaxeOnUse].BColorPickaxe/255,
+                                        player.tools[player.pickaxeOnUse].AColorPickaxe/255));
+        print(player.tools[0].RColorPickaxe + " " + player.tools[player.pickaxeOnUse].GColorPickaxe + " " +
+                                        player.tools[player.pickaxeOnUse].BColorPickaxe + " " +
+                                        player.tools[player.pickaxeOnUse].AColorPickaxe);
 
+    }
 }

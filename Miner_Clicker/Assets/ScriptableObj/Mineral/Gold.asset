@@ -18,5 +18,5 @@ MonoBehaviour:
   probabilityAppear: 50
   timeToFoundation: 50
   chanceOfSmelting: 60
-  imageMineral: {fileID: 0}
-  imageMineralOre: {fileID: 0}
+  imageMineralIcon: {fileID: 21300000, guid: ab084725914b1e94ead3d98e8654e429, type: 3}
+  imageMineralSprite: {fileID: 21300000, guid: 5e4d29ced82f3a34680b5ab3fcdd2338, type: 3}

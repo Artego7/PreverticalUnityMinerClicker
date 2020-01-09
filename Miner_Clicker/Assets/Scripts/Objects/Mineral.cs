@@ -18,11 +18,11 @@ public class Mineral : ScriptableObject
     public int chanceOfSmelting;
 
     //Visual
-    public Sprite imageMineral;
-    public Sprite imageMineralOre;
+    public Sprite imageMineralIcon;
+    public Sprite imageMineralSprite;
 
     public Mineral(int id_, string mineral_, int hardness_, int probabilityAppear_, int timeToFoundation_,
-                    int chanceOfSmelting_, Sprite imageMineralOre_, Sprite imageMineral_)
+                    int chanceOfSmelting_, Sprite imageMineralSprite_, Sprite imageMineralIcon_)
     {
         id = id_;
         mineralname = mineral_;
@@ -30,8 +30,8 @@ public class Mineral : ScriptableObject
         probabilityAppear = probabilityAppear_;
         timeToFoundation = timeToFoundation_;
         chanceOfSmelting = chanceOfSmelting_;
-        imageMineralOre = imageMineralOre_;
-        imageMineral = imageMineral_;
+        //imageMineralSprite = imageMineralSprite_;
+        imageMineralIcon = imageMineralIcon_;
     }
     
     public int getIdMineral()

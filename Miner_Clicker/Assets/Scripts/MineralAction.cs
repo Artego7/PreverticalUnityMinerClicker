@@ -35,12 +35,14 @@ public class MineralAction : MonoBehaviour
 
         cubeRenderer = this.gameObject.GetComponent<Renderer>();
         animator = this.gameObject.GetComponent<Animator>();
-
         //world.Print();
-        mineral = world.minerals[Random.RandomRange(0,3)];
+        mineral = world.minerals[Random.RandomRange(0, 3)];//Random.RandomRange(0,3)
+
+        cubeRenderer.material.SetTexture("_MainTex", mineral.imageMineralSprite.texture);
+
         actualHardness = mineral.hardness;
         textShowMineral.text = mineral.mineralname;
-        //Debug.Log(mineral.hardness);
+        //Debug.Log(mineral.image);
         //Debug.Log(mineral.mineralname);
         print(player.pickaxeOnUse);
     }
@@ -69,6 +71,7 @@ public class MineralAction : MonoBehaviour
             cubeRenderer.material.SetColor("_Color", Color.red);
         if (actualHardness <= 0)
         {
+            pickaxeAction.animPickaxeFalse();
             mControler.instanceMineral();
             Destroy(gameObject);
         }

@@ -10,7 +10,7 @@ public class DestructionMineralParticle : MonoBehaviour
     void Start()
     {
         ps = gameObject.GetComponent<ParticleSystem>();
-        ps.Pause();
+        //ps.Pause();
         //Debug.Log(ps.isPaused);
         //Debug.Log(ps.main.duration);
 
@@ -21,17 +21,17 @@ public class DestructionMineralParticle : MonoBehaviour
     {
         currentTime += Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0) && ps.isPaused)
-        {
-            Debug.Log("Play = " + ps.isPaused);
-            ps.Play();
-        }
+        //if (Input.GetMouseButtonDown(0) && ps.isPaused)
+        //{
+        //    Debug.Log("Play = " + ps.isPaused);
+        //    ps.Play();
+        //}
 
 
-        if (ps.isPlaying && currentTime >= ps.main.duration * 60)
-        {
-            ps.Pause();
-            Debug.Log("Pausado = " + ps.isPaused);
-        }
+        //if (ps.isPlaying && currentTime >= ps.main.duration * 60)
+        //{
+        //    ps.Pause();
+        //    Debug.Log("Pausado = " + ps.isPaused);
+        //}
     }
 }

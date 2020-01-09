@@ -40,10 +40,10 @@ public class ToolList : MonoBehaviour
             tools.Add(tool);
             //tools[i].Print();
             prefabTool.GetComponent<ChangePickaxe>().id = tools[i].id;
-            prefabTool.GetComponent<Image>().color = new Color(tools[i].RColorPickaxe, 
-                                                                tools[i].GColorPickaxe, 
-                                                                tools[i].BColorPickaxe, 
-                                                                tools[i].AColorPickaxe);
+            prefabTool.GetComponent<Image>().color = new Color(tools[i].RColorPickaxe / 255, 
+                                                                tools[i].GColorPickaxe / 255, 
+                                                                tools[i].BColorPickaxe / 255, 
+                                                                tools[i].AColorPickaxe / 255);
             textPF = prefabTool.GetComponentInChildren<Text>();
             imgPF = prefabTool.transform.GetChild(0).GetComponent<Image>();
             imgPF.sprite = tools[i].spriteIcon;

@@ -7,10 +7,12 @@ public class ChangePickaxe : MonoBehaviour
 
     public Player player;
     public int id;
-    public bool isChange = false;
+    GameObject gameControler;
 
     private void Awake()
     {
+        gameControler = GameObject.Find("GameControler");
+
         player = GameControler.instance.player;
     }
     // Start is called before the first frame update
@@ -24,9 +26,8 @@ public class ChangePickaxe : MonoBehaviour
     {
         
     }
-    public void changePickaxe()
+    public void change()
     {
-        player.pickaxeOnUse = player.tools[id].id;
-        isChange = true;
+        gameControler.GetComponent<GameControler>().changePickaxe(id);
     }
 }

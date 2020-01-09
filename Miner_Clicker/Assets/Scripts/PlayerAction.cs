@@ -18,12 +18,12 @@ public class PlayerAction : MonoBehaviour
         player.tools = toolList.tools;
         player.pickaxeOnUse = 0;
         for (int i = 0; i < player.tools.Count ; i++)
-        print(player.tools[i].tool);
+        //print(player.tools[i].tool);
         Pickaxe.transform.GetChild(1).GetComponent<Renderer>()
-            .material.SetColor("_Color", new Color(player.tools[player.pickaxeOnUse].RColorPickaxe,
-                                        player.tools[player.pickaxeOnUse].GColorPickaxe,
-                                        player.tools[player.pickaxeOnUse].BColorPickaxe,
-                                        player.tools[player.pickaxeOnUse].AColorPickaxe));
+            .material.SetColor("_Color", new Color(player.tools[player.pickaxeOnUse].RColorPickaxe / 255,
+                                        player.tools[player.pickaxeOnUse].GColorPickaxe / 255,
+                                        player.tools[player.pickaxeOnUse].BColorPickaxe / 255,
+                                        player.tools[player.pickaxeOnUse].AColorPickaxe / 255));
         print(player.tools[0].RColorPickaxe + " " + player.tools[player.pickaxeOnUse].GColorPickaxe + " " +
                                         player.tools[player.pickaxeOnUse].BColorPickaxe + " " +
                                         player.tools[player.pickaxeOnUse].AColorPickaxe);
