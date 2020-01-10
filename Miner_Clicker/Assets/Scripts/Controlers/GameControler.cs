@@ -6,7 +6,8 @@ using UnityEngine;
 public class GameControler : MonoBehaviour
 {
     public static GameControler instance;
-
+    [SerializeField]
+    GameObject prefabMineral;
     [SerializeField]
     public World world;
     [SerializeField]
@@ -15,13 +16,24 @@ public class GameControler : MonoBehaviour
     public Player player;
     [SerializeField]
     GameObject Pickaxe;
+    [SerializeField]
+    MineralList mineralList;
+    //ParticleClick
+    [SerializeField]
+    ParticleSystem ps;
+    //Audio
+    [SerializeField]
+    AudioClip basicPickaxeSound;
+    [SerializeField]
+    AudioSource audioSource;
+
 
     List<World> worlds = new List<World>();
-
+    public List<Mineral> minerals = new List<Mineral>();
     string[] worldNames =
     {
         "Earth",
-        "Marth",
+        "Mars",
         "Jupiter"
     };
 
@@ -41,13 +53,20 @@ public class GameControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Instantiate(prefabMineral);
+        minerals = mineralList.minerals;
+        audioSource.clip = basicPickaxeSound;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (prefabMineral == null)
+            print("hola");
+        if (Input.GetKeyDown(KeyCode.C))
+            print(prefabMineral);
+        if (Input.GetKeyDown(KeyCode.S))
+            instanceMineral();
     }
     public void GoEarth()
     {
@@ -71,9 +90,23 @@ public class GameControler : MonoBehaviour
                                         player.tools[player.pickaxeOnUse].GColorPickaxe/255,
                                         player.tools[player.pickaxeOnUse].BColorPickaxe/255,
                                         player.tools[player.pickaxeOnUse].AColorPickaxe/255));
-        print(player.tools[0].RColorPickaxe + " " + player.tools[player.pickaxeOnUse].GColorPickaxe + " " +
-                                        player.tools[player.pickaxeOnUse].BColorPickaxe + " " +
-                                        player.tools[player.pickaxeOnUse].AColorPickaxe);
 
+    }
+    public void instanceMineral()
+    {
+        Instantiate(prefabMineral);
+    }
+    public void sumNumOfMineral(int id, int num)
+    {
+        minerals[id].numOfMineral = num;
+    }
+    public int numOfMineral(int id)
+    {
+        return minerals[id].numOfMineral;
+    }
+    public void emitParticlesClick()
+    {
+        ps.Emit(7);
+        audioSource.Play();
     }
 }

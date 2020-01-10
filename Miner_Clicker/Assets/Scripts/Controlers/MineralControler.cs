@@ -11,17 +11,14 @@ public class MineralControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(prefabMineral);
+        
         //Debug.Log(prefabMineral);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(prefabMineral == null)
-            Instantiate(prefabMineral);
-        if (Input.GetKeyDown(KeyCode.S))
-            Instantiate(prefabMineral);
+        
     }
     public void instanceMineral()
     {

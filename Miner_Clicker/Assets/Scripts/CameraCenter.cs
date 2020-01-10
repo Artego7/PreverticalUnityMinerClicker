@@ -16,7 +16,7 @@ public class CameraCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = center.transform.position + Vector3.forward * 250;
+        this.transform.position = center.transform.position + Vector3.forward * -150;
         //this.
     }
 }

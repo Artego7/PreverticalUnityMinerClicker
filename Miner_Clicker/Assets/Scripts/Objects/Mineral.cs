@@ -8,7 +8,8 @@ public class Mineral : ScriptableObject
     //General
     public int id;
     public string mineralname;
-    public int hardness;
+    public float hardness;
+    public int numOfMineral;
 
     //Mining
     public int probabilityAppear;
@@ -59,7 +60,8 @@ public class Mineral : ScriptableObject
     {
         Debug.Log("id: " + id + ", name: " + name +", hardness: " + hardness +
             ", Probability Appear: " + probabilityAppear + ", Time to Foundation" + timeToFoundation +
-            ", Chance of Smelting: " + chanceOfSmelting);
+            ", Chance of Smelting: " + chanceOfSmelting + ", Image Mineral Icon: " + imageMineralIcon + 
+            ", Image Mineral Sprite: " + imageMineralSprite);
     }
 
 }
