@@ -38,7 +38,7 @@ public class MineralAction : MonoBehaviour
         cubeRenderer = this.gameObject.GetComponent<Renderer>();
         animator = this.gameObject.GetComponent<Animator>();
 
-        mineral = world.minerals[Random.RandomRange(0, world.minerals.Count - 1)];//Random.RandomRange(0,3)
+        mineral = world.minerals[Random.RandomRange(0, world.minerals.Count)];//Random.RandomRange(0,3)
         //print(world.minerals.Count - 1);
         cubeRenderer.material.SetTexture("_MainTex", mineral.imageMineralSprite.texture);
 
@@ -54,7 +54,7 @@ public class MineralAction : MonoBehaviour
         {
             pickaxeAction.animPickaxeFalse();
             animator.SetBool("IsMining", false);
-            isMining = !isMining;;
+            isMining = !isMining; ;
         }
     }
     private void OnMouseDown()

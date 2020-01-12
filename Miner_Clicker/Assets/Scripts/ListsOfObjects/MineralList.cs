@@ -23,9 +23,7 @@ public class MineralList : MonoBehaviour
         "Rock",
         "Iron",
         "Gold",
-        "Diamond",
-        "Marthitina",
-        "Jupiteritus"
+        "Diamond"
     };
 
     public List<Mineral> minerals = new List<Mineral>();
@@ -38,8 +36,9 @@ public class MineralList : MonoBehaviour
         {
 
             mineral = (Mineral)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Minerals/" + mineralName[i] + ".asset", typeof(Mineral));
+            //mineral = Resources.Load<Mineral>("ScriptableObj/Worlds/" + mineralName[i] + ".asset");
             minerals.Add(mineral);
-            print(mineral);
+            //print(mineral);
             //minerals[i].Print();
             prefabTool.GetComponent<SumNumOfMinerals>().numOfMineral = minerals[i].numOfMineral;
             prefabTool.GetComponent<SumNumOfMinerals>().id= minerals[i].id;

@@ -37,9 +37,11 @@ public class ToolList : MonoBehaviour
         for (int i = 0; i < toolNames.Length; i++)
         {
             tool = (Tool)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Tools/" + toolNames[i] + ".asset", typeof(Tool));
+            //tool = Resources.Load<Tool>("ScriptableObj/Worlds/" + toolNames[i] + ".asset");
             tools.Add(tool);
             //tools[i].Print();
             prefabTool.GetComponent<ChangePickaxe>().id = tools[i].id;
+            prefabTool.GetComponent<ChangePickaxe>().isBuyed = tools[i].isBuyed;
             prefabTool.GetComponent<Image>().color = new Color(tools[i].RColorPickaxe / 255, 
                                                                 tools[i].GColorPickaxe / 255, 
                                                                 tools[i].BColorPickaxe / 255, 

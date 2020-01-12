@@ -23,9 +23,9 @@ public class PlayerAction : MonoBehaviour
                                         player.tools[player.pickaxeOnUse].GColorPickaxe / 255,
                                         player.tools[player.pickaxeOnUse].BColorPickaxe / 255,
                                         player.tools[player.pickaxeOnUse].AColorPickaxe / 255));
-        print(player.tools[0].RColorPickaxe + " " + player.tools[player.pickaxeOnUse].GColorPickaxe + " " +
-                                        player.tools[player.pickaxeOnUse].BColorPickaxe + " " +
-                                        player.tools[player.pickaxeOnUse].AColorPickaxe);
+        //print(player.tools[0].RColorPickaxe + " " + player.tools[player.pickaxeOnUse].GColorPickaxe + " " +
+        //                                player.tools[player.pickaxeOnUse].BColorPickaxe + " " +
+        //                                player.tools[player.pickaxeOnUse].AColorPickaxe);
     }
 
     // Update is called once per frame

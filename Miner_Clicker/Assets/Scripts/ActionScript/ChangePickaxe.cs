@@ -7,7 +7,9 @@ public class ChangePickaxe : MonoBehaviour
 
     public Player player;
     public int id;
+    public bool isBuyed;
     GameObject gameControler;
+
 
     private void Awake()
     {
@@ -26,8 +28,13 @@ public class ChangePickaxe : MonoBehaviour
     {
         
     }
+
     public void change()
     {
-        gameControler.GetComponent<GameControler>().changePickaxe(id);
+        if (gameControler.GetComponent<GameControler>().buyPickaxe(id) && !isBuyed)
+            isBuyed = true;
+
+        if (isBuyed)
+            gameControler.GetComponent<GameControler>().changePickaxe(id);
     }
 }

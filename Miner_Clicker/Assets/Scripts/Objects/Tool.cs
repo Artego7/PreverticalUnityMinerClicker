@@ -10,9 +10,13 @@ public class Tool : ScriptableObject
     public int hardness;
     public int durability;
     public int hability;
+    public int priceForBuy;
+    public bool isBuyed;
 
     public Material materialPickaxe;
     public Material materialPickaxeStick;
+
+
     //TEMPORAL VARIABLE
     public float RColorPickaxe;
     public float GColorPickaxe;

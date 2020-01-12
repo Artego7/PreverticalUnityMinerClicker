@@ -18,6 +18,8 @@ public class GameControler : MonoBehaviour
     GameObject Pickaxe;
     [SerializeField]
     MineralList mineralList;
+    [SerializeField]
+    ToolList toolList;
     //ParticleClick
     [SerializeField]
     ParticleSystem ps;
@@ -29,6 +31,7 @@ public class GameControler : MonoBehaviour
 
 
     List<World> worlds = new List<World>();
+    List<Tool> tools = new List<Tool>();
     public List<Mineral> minerals = new List<Mineral>();
     string[] worldNames =
     {
@@ -44,9 +47,9 @@ public class GameControler : MonoBehaviour
         for (int i = 0; i < worldNames.Length; i++)
         {
             world = (World)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Worlds/" + worldNames[i] + ".asset", typeof(World));
+            //world = Resources.Load<World>("ScriptableObj/Worlds/" + worldNames[i] + ".asset");
             worlds.Add(world);
         }
-        //Object[] wa = Resources.LoadAll("ScriptableObj/Worlds",typeof(World));
         world = worlds[0];
         player = playerAction.player;
     }
@@ -55,6 +58,7 @@ public class GameControler : MonoBehaviour
     {
         Instantiate(prefabMineral);
         minerals = mineralList.minerals;
+        tools = toolList.tools;
         audioSource.clip = basicPickaxeSound;
     }
 
@@ -64,9 +68,12 @@ public class GameControler : MonoBehaviour
         if (prefabMineral == null)
             print("hola");
         if (Input.GetKeyDown(KeyCode.C))
-            print(prefabMineral);
         if (Input.GetKeyDown(KeyCode.S))
             instanceMineral();
+        if (Input.GetKeyDown(KeyCode.A))
+            Admin();
+        if (Input.GetKeyDown(KeyCode.R))
+            ResetMinerals();
     }
     public void GoEarth()
     {
@@ -108,5 +115,36 @@ public class GameControler : MonoBehaviour
     {
         ps.Emit(7);
         audioSource.Play();
+    }
+    public bool buyPickaxe(int id)
+    {
+            print(id);
+        if(minerals[id].numOfMineral >= tools[id].priceForBuy)
+        {
+            print(minerals[id].numOfMineral);
+            print(tools[id].priceForBuy);
+            if(id == 0)
+            minerals[id].numOfMineral -= tools[id].priceForBuy;
+            if (id > 0)
+                minerals[id-1].numOfMineral -= tools[id].priceForBuy;
+            return true;
+        }
+        return false;
+    }
+
+
+    public void Admin()
+    {
+        minerals[0].numOfMineral += 10;
+        minerals[1].numOfMineral += 10;
+        minerals[2].numOfMineral += 10;
+        minerals[3].numOfMineral += 10;
+    }
+    public void ResetMinerals()
+    {
+        minerals[0].numOfMineral = 0;
+        minerals[1].numOfMineral = 0;
+        minerals[2].numOfMineral = 0;
+        minerals[3].numOfMineral = 0;
     }
 }
