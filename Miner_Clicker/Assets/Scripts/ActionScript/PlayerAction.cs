@@ -7,18 +7,19 @@ public class PlayerAction : MonoBehaviour
     [SerializeField]
     public Player player;
     [SerializeField]
-    GameObject Pickaxe;
+    GameObject pickaxe;
     [SerializeField]
     ToolList toolList;
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
+        //print(pickaxe.name);
         player.playerName = "Abel";
         player.tools = toolList.tools;
         player.pickaxeOnUse = 0;
         //for (int i = 0; i < player.tools.Count; i++)
-        Pickaxe.transform.GetChild(1).GetComponent<Renderer>()
+        pickaxe.transform.GetChild(1).GetComponent<Renderer>()
             .material.SetColor("_Color", new Color(player.tools[player.pickaxeOnUse].RColorPickaxe / 255,
                                         player.tools[player.pickaxeOnUse].GColorPickaxe / 255,
                                         player.tools[player.pickaxeOnUse].BColorPickaxe / 255,

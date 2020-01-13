@@ -112,41 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &12029994
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 12029995}
-  m_Layer: 5
-  m_Name: MainMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &12029995
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12029994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 924303382}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &35134023
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +478,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: 3341c85cdba60ea4f84c2970d964cc28, type: 3}
       propertyPath: m_Name
-      value: Pickaxe2_0
+      value: Pickaxe
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3341c85cdba60ea4f84c2970d964cc28, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1560,7 +1525,7 @@ PrefabInstance:
     - target: {fileID: 1856722791288198377, guid: 22c72837f2727984488b40122a905360,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1856722791288198377, guid: 22c72837f2727984488b40122a905360,
         type: 3}
@@ -1706,6 +1671,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856722791336333205, guid: 22c72837f2727984488b40122a905360,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856722791336333205, guid: 22c72837f2727984488b40122a905360,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856722792249138844, guid: 22c72837f2727984488b40122a905360,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856722792249138844, guid: 22c72837f2727984488b40122a905360,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856722792249138844, guid: 22c72837f2727984488b40122a905360,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856722792824476689, guid: 22c72837f2727984488b40122a905360,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856722792824476689, guid: 22c72837f2727984488b40122a905360,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c72837f2727984488b40122a905360, type: 3}
@@ -2520,8 +2520,6 @@ RectTransform:
   - {fileID: 256268407}
   - {fileID: 1798248144}
   - {fileID: 1591455802}
-  - {fileID: 12029995}
-  - {fileID: 1929976666}
   - {fileID: 84956435}
   - {fileID: 759639522}
   m_Father: {fileID: 0}
@@ -2726,6 +2724,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ea330fc073e1ae49a74b825d95019d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   prefabMineral: {fileID: 2435709437455627859, guid: e9c91f1dacb8f8b448723268a10f7d87,
@@ -3507,9 +3511,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabMineral: {fileID: 2435709437455627859, guid: e9c91f1dacb8f8b448723268a10f7d87,
     type: 3}
-  world: {fileID: 11400000, guid: e9948a5cb3c1dbd428cad1c75568b3e3, type: 2}
+  world: {fileID: 0}
   playerAction: {fileID: 2146400348}
-  player: {fileID: 11400000, guid: 611b5bda76f995b49ab28f1756c14eaa, type: 2}
+  player: {fileID: 0}
   Pickaxe: {fileID: 1615575919}
   mineralList: {fileID: 1798248146}
   toolList: {fileID: 1798248145}
@@ -4140,41 +4144,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880717860}
   m_CullTransparentMesh: 0
---- !u!1 &1929976665
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1929976666}
-  m_Layer: 5
-  m_Name: OptionsMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1929976666
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929976665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 924303382}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2056293273
 GameObject:
   m_ObjectHideFlags: 0
@@ -9172,7 +9141,7 @@ PrefabInstance:
     - target: {fileID: 5663995488639638001, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5663995488639638001, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
         type: 3}
@@ -9264,6 +9233,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 5663995489074329657, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 38.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663995489074329657, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -87.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663995488339409024, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663995488339409024, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663995488355841046, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663995488355841046, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663995489074329656, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663995489074329656, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c96aee9413c6d4f4fa9b24c9b50bbbf1, type: 3}
 --- !u!1 &2146400347
@@ -9295,8 +9304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16586b1a7d4821b49a2f4e50c36827e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 611b5bda76f995b49ab28f1756c14eaa, type: 2}
-  Pickaxe: {fileID: 1615575919}
+  player: {fileID: 11400000, guid: 8ca32c6eb14d9e942a4af0898fba2c8b, type: 2}
+  pickaxe: {fileID: 1615575919}
   toolList: {fileID: 1798248145}
 --- !u!4 &2146400349
 Transform:

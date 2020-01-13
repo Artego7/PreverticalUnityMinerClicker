@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class MineralList : MonoBehaviour
 {
@@ -20,6 +24,7 @@ public class MineralList : MonoBehaviour
 
     string[] mineralName=
     {
+        "Wood",
         "Rock",
         "Iron",
         "Gold",
@@ -28,15 +33,19 @@ public class MineralList : MonoBehaviour
 
     public List<Mineral> minerals = new List<Mineral>();
 
-    private void Awake()
+    private void Start()
     {
         //Debug.Log(worldNames[0]);
         //world.Print();
-        for (int i = 0; i < mineralName.Length; i++)
+        mineral = Resources.Load<Mineral>("ScriptableObj/Minerals/" + mineralName[0]);
+        minerals.Add(mineral);
+        for (int i = 1; i < mineralName.Length; i++)
         {
-
-            mineral = (Mineral)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Minerals/" + mineralName[i] + ".asset", typeof(Mineral));
-            //mineral = Resources.Load<Mineral>("ScriptableObj/Worlds/" + mineralName[i] + ".asset");
+//#if UNITY_EDITOR
+//            mineral = (Mineral)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Minerals/" + mineralName[i] + ".asset", typeof(Mineral));
+//#endif
+            mineral = Resources.Load<Mineral>("ScriptableObj/Minerals/" + mineralName[i]);
+            //print(mineral);
             minerals.Add(mineral);
             //print(mineral);
             //minerals[i].Print();
@@ -56,10 +65,7 @@ public class MineralList : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()

@@ -15,10 +15,10 @@ MonoBehaviour:
   id: 0
   world: Earth
   minerals:
-  - {fileID: 11400000, guid: 119bc0b4d4edd604aa805e59f4a83025, type: 2}
-  - {fileID: 11400000, guid: 1e342e2757f5edf4da8627ed887ef0ea, type: 2}
-  - {fileID: 11400000, guid: 4bcdc9fff51a5154fba46f683442db57, type: 2}
-  - {fileID: 11400000, guid: d7bbe77ee880ff74180beb572d081021, type: 2}
+  - {fileID: 11400000, guid: 17f22bde327b41d4f8af7492bd15c134, type: 2}
+  - {fileID: 11400000, guid: b876403a1916c0842a8af0e1111cbbe4, type: 2}
+  - {fileID: 11400000, guid: e9b33b36dc9b9c94aaa94527d31c5705, type: 2}
+  - {fileID: 11400000, guid: d8344017f1d01794d97a08ddb40311ba, type: 2}
   nameOfZones:
   - Mina de Hierro
   - Mina de Oro

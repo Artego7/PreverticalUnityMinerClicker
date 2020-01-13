@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d3b7fa43134d246a2434570fc7213e, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: 
-  id: 2
+  id: 3
   mineralname: Gold
   hardness: 50
-  numOfMineral: 52
+  numOfMineral: 320
   probabilityAppear: 50
   timeToFoundation: 50
   chanceOfSmelting: 60

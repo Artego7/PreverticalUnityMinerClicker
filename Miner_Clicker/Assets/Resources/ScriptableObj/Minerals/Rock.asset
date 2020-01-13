@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d3b7fa43134d246a2434570fc7213e, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  id: 0
+  id: 1
   mineralname: Rock
   hardness: 10
-  numOfMineral: 362
+  numOfMineral: 450
   probabilityAppear: 95
   timeToFoundation: 30
   chanceOfSmelting: 95

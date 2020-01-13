@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class ToolList : MonoBehaviour
 {
@@ -30,14 +34,16 @@ public class ToolList : MonoBehaviour
         "DiamondPickaxe"
     };
 
-    private void Awake()
+    private void Start()
     {
         //Debug.Log(worldNames[0]);
         //world.Print();
         for (int i = 0; i < toolNames.Length; i++)
         {
-            tool = (Tool)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Tools/" + toolNames[i] + ".asset", typeof(Tool));
-            //tool = Resources.Load<Tool>("ScriptableObj/Worlds/" + toolNames[i] + ".asset");
+//#if UNITY_EDITOR
+//            tool = (Tool)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Tools/" + toolNames[i] + ".asset", typeof(Tool));
+//#endif
+            tool = Resources.Load<Tool>("ScriptableObj/Tools/" + toolNames[i]);
             tools.Add(tool);
             //tools[i].Print();
             prefabTool.GetComponent<ChangePickaxe>().id = tools[i].id;
@@ -56,10 +62,6 @@ public class ToolList : MonoBehaviour
 
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d3b7fa43134d246a2434570fc7213e, type: 3}
   m_Name: Diamond
   m_EditorClassIdentifier: 
-  id: 3
+  id: 4
   mineralname: Diamond
   hardness: 90
-  numOfMineral: 91
+  numOfMineral: 80
   probabilityAppear: 20
   timeToFoundation: 120
   chanceOfSmelting: 80

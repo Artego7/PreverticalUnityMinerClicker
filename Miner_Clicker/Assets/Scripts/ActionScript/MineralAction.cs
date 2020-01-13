@@ -38,7 +38,7 @@ public class MineralAction : MonoBehaviour
         cubeRenderer = this.gameObject.GetComponent<Renderer>();
         animator = this.gameObject.GetComponent<Animator>();
 
-        mineral = world.minerals[Random.RandomRange(0, world.minerals.Count)];//Random.RandomRange(0,3)
+        mineral = world.minerals[Random.RandomRange(1, world.minerals.Count)];//Random.RandomRange(0,3)
         //print(world.minerals.Count - 1);
         cubeRenderer.material.SetTexture("_MainTex", mineral.imageMineralSprite.texture);
 
@@ -71,6 +71,7 @@ public class MineralAction : MonoBehaviour
         imgDirability.fillAmount = actualHardness / mineral.hardness;
         //print(actualHardness / mineral.hardness);
 
+        print(mineral.numOfMineral);
         if (actualHardness <= 0)
         {
             mineral.numOfMineral++;

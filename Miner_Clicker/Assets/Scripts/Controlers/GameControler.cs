@@ -1,7 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
+
+// Editor stuff here
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class GameControler : MonoBehaviour
 {
@@ -46,17 +51,19 @@ public class GameControler : MonoBehaviour
         instance = this;
         for (int i = 0; i < worldNames.Length; i++)
         {
-            world = (World)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Worlds/" + worldNames[i] + ".asset", typeof(World));
-            //world = Resources.Load<World>("ScriptableObj/Worlds/" + worldNames[i] + ".asset");
+//#if UNITY_EDITOR
+//            world = (World)AssetDatabase.LoadAssetAtPath("Assets/ScriptableObj/Worlds/" + worldNames[i] + ".asset", typeof(World));
+//#endif
+            world = Resources.Load<World>("ScriptableObj/Worlds/" + worldNames[i]);
             worlds.Add(world);
         }
         world = worlds[0];
         player = playerAction.player;
+        Instantiate(prefabMineral);
     }
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(prefabMineral);
         minerals = mineralList.minerals;
         tools = toolList.tools;
         audioSource.clip = basicPickaxeSound;
@@ -119,26 +126,32 @@ public class GameControler : MonoBehaviour
     public bool buyPickaxe(int id)
     {
             print(id);
+                print(minerals[id].id + " " + tools[id].id);
         if(minerals[id].numOfMineral >= tools[id].priceForBuy)
         {
-            print(minerals[id].numOfMineral);
-            print(tools[id].priceForBuy);
-            if(id == 0)
+            //print(minerals[id].numOfMineral);
+            //print(tools[id].priceForBuy);
+            //if(id == 0)
             minerals[id].numOfMineral -= tools[id].priceForBuy;
-            if (id > 0)
-                minerals[id-1].numOfMineral -= tools[id].priceForBuy;
+            //if (id > 0)
+            //{
+            //    minerals[id-1].numOfMineral -= tools[id].priceForBuy;
+            //}
+
             return true;
         }
         return false;
     }
 
 
+    //ADMIN
     public void Admin()
     {
         minerals[0].numOfMineral += 10;
         minerals[1].numOfMineral += 10;
         minerals[2].numOfMineral += 10;
         minerals[3].numOfMineral += 10;
+        minerals[4].numOfMineral += 10;
     }
     public void ResetMinerals()
     {
@@ -146,5 +159,6 @@ public class GameControler : MonoBehaviour
         minerals[1].numOfMineral = 0;
         minerals[2].numOfMineral = 0;
         minerals[3].numOfMineral = 0;
+        minerals[4].numOfMineral = 0;
     }
 }
